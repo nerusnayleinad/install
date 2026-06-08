@@ -209,16 +209,16 @@ check_deps() {
 }
 
 check_python() {
-  if type -P python2.7 &> /dev/null; then
-    PYTHONVERSION="2.7"
-    PYTHON="python2.7"
+  if type -P python3 &> /dev/null; then
+    PYTHONVERSION="3"
+    PYTHON="python3"
   elif type -P python &> /dev/null; then
     PYTHONVERSION=`python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))'`
     PYTHON="python"
   fi
 
-  if [[ $PYTHONVERSION != "2.7" ]]; then
-    echo "Python version 2.7 is required to install pty.js. Please install python 2.7 and try again. You can find more information on how to install Python in the docs: https://docs.c9.io/ssh_workspaces.html"
+  if [[ $PYTHONVERSION != "3" ]]; then
+    echo "Python version 3 is required to install pty.js. Please install python 3 and try again. You can find more information on how to install Python in the docs: https://docs.c9.io/ssh_workspaces.html"
     exit 100
   fi
 }
@@ -241,13 +241,13 @@ ensure_local_gyp() {
     rm -rf virtualenv
     rm -rf python
     if has virtualenv; then
-      virtualenv -p python2 "$C9_DIR/python"
+      virtualenv -p python3 "$C9_DIR/python"
     else
       download_virtualenv
       "$PYTHON" virtualenv/virtualenv.py "$C9_DIR/python"
     fi
-    if [[ -f "$C9_DIR/python/bin/python2" ]]; then
-      PYTHON="$C9_DIR/python/bin/python2"
+    if [[ -f "$C9_DIR/python/bin/python3" ]]; then
+      PYTHON="$C9_DIR/python/bin/python3"
     else
       echo "Unable to setup virtualenv"
       exit 1
