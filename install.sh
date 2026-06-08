@@ -288,7 +288,7 @@ compile_tmux(){
   rm libevent-2.1.12-stable.tar.gz
   cd libevent-2.1.12-stable
   echo ":Configuring Libevent"
-  ./configure --disable-shared --prefix="$C9_DIR/local"
+  ./configure --disable-shared --disable-openssl --prefix="$C9_DIR/local"
   echo ":Compiling Libevent"
   make
   echo ":Installing libevent"
