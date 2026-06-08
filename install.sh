@@ -36,7 +36,7 @@ if [ ! -d "$C9_DIR" ]; then
 fi
 
 VERSION=1
-NODE_VERSION=v6.3.1
+NODE_VERSION=v20.20.0
 NODE_VERSION_ARM_PI=v0.10.28
 NPM=$C9_DIR/node/bin/npm
 NODE=$C9_DIR/node/bin/node
