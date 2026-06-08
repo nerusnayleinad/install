@@ -1,5 +1,6 @@
 #!/bin/bash -e
-set -e
+
+set -x
 has() {
   type "$1" > /dev/null 2>&1
 }
@@ -44,7 +45,7 @@ NODE=$C9_DIR/node/bin/node
 export TMP=$C9_DIR/tmp
 export TMPDIR=$TMP
 
-PYTHON=python3
+PYTHON=python
 
 # node-gyp uses sytem node or fails with command not found if
 # we don't bump this node up in the path
