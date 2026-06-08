@@ -283,9 +283,9 @@ node(){
 compile_tmux(){
   cd "$C9_DIR"
   echo ":Compiling libevent..."
-  tar xzf libevent-2.1.8-stable.tar.gz
-  rm libevent-2.1.8-stable.tar.gz
-  cd libevent-2.1.8-stable
+  tar xzf libevent-2.1.12-stable.tar.gz
+  rm libevent-2.1.12-stable.tar.gz
+  cd libevent-2.1.12-stable
   echo ":Configuring Libevent"
   ./configure --disable-shared --prefix="$C9_DIR/local"
   echo ":Compiling Libevent"
