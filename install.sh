@@ -214,7 +214,7 @@ check_python() {
     PYTHON="python3"
   elif type -P python &> /dev/null; then
     PYTHONVERSION=`python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))'`
-    PYTHON="python"
+    PYTHON="python3"
   fi
 
   if [[ $PYTHONVERSION != "3" ]]; then
