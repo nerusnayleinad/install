@@ -415,13 +415,13 @@ ptyjs(){
 
   if ! hasPty; then
     echo "Unknown exception installing pty.js"
-    "$C9_DIR/node/bin/node" -e "console.log(require('node-pty'))"
+    "$C9_DIR/node/bin/node" -e "console.log(require('node-pty-prebuilt-multiarch'))"
     exit 100
   fi
 }
 
 hasPty() {
-  local HASPTY=$("$C9_DIR/node/bin/node" -p "typeof require('node-pty').createTerminal=='function'" 2> /dev/null)
+  local HASPTY=$("$C9_DIR/node/bin/node" -p "typeof require('node-pty-prebuilt-multiarch').createTerminal=='function'" 2> /dev/null)
   if [ "$HASPTY" != true ]; then
     return 1
   fi
