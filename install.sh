@@ -411,17 +411,17 @@ nak(){
 
 ptyjs(){
   echo :Installing pty.js
-  "$NPM" install node-pty-prebuilt-multiarch@0.13.1
+  "$NPM" install @homebridge/node-pty-prebuilt-multiarch
 
   if ! hasPty; then
     echo "Unknown exception installing pty.js"
-    "$C9_DIR/node/bin/node" -e "console.log(require('node-pty-prebuilt-multiarch'))"
+    "$C9_DIR/node/bin/node" -e "console.log(require('@homebridge/node-pty-prebuilt-multiarch'))"
     exit 100
   fi
 }
 
 hasPty() {
-  local HASPTY=$("$C9_DIR/node/bin/node" -p "typeof require('node-pty-prebuilt-multiarch').createTerminal=='function'" 2> /dev/null)
+  local HASPTY=$("$C9_DIR/node/bin/node" -p "typeof require('@homebridge/node-pty-prebuilt-multiarch').createTerminal=='function'" 2> /dev/null)
   if [ "$HASPTY" != true ]; then
     return 1
   fi
