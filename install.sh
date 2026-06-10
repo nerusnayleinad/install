@@ -45,7 +45,7 @@ NODE=$C9_DIR/node/bin/node
 export TMP=$C9_DIR/tmp
 export TMPDIR=$TMP
 
-PYTHON=python
+export PYTHON=python
 
 # node-gyp uses sytem node or fails with command not found if
 # we don't bump this node up in the path
@@ -254,7 +254,7 @@ ensure_local_gyp() {
       exit 1
     fi
   fi
-  "$NPM" config -g set python "$PYTHON"
+  
   "$NPM" config -g set unsafe-perm true
   
   local GYP_PATH=$C9_DIR/node/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
