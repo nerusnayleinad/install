@@ -255,8 +255,6 @@ ensure_local_gyp() {
     fi
   fi
   
-  "$NPM" config -g set unsafe-perm true
-  
   local GYP_PATH=$C9_DIR/node/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
   if [ -f  "$GYP_PATH" ]; then
     ln -s "$GYP_PATH" "$C9_DIR"/node/bin/node-gyp &> /dev/null || :
